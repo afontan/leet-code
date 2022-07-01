@@ -10,7 +10,7 @@ class Solution {
         var maxValue = Int.MIN_VALUE
         var minValue = Int.MAX_VALUE
         var totalSum = 0.0
-        salary.forEachIndexed { index, number ->
+        salary.forEach { number ->
             if (number > maxValue) {
                maxValue = number
             }
