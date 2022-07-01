@@ -11,13 +11,13 @@ class Solution {
         var minValue = Int.MAX_VALUE
         var totalSum = 0.0
         salary.forEachIndexed { index, number ->
-            if (salary[index] > maxValue) {
-               maxValue = salary[index]
+            if (number > maxValue) {
+               maxValue = number
             }
-            if (salary[index] < minValue) {
-                minValue = salary[index]
+            if (number < minValue) {
+                minValue = number
             }
-            totalSum += salary[index]
+            totalSum += number
         }
         return (totalSum - maxValue - minValue) / (salary.size - 2)
     }
