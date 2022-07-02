@@ -1,5 +1,6 @@
 package problem_1232
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class SolutionTest {
@@ -14,7 +15,7 @@ class SolutionTest {
             intArrayOf(6,7)
         )
 
-        assert(Solution.checkStraightLine(case1))
+        assertThat(Solution.checkStraightLine(case1)).isTrue
     }
 
     @Test
@@ -28,7 +29,7 @@ class SolutionTest {
             intArrayOf(7,7)
         )
 
-        assert(!Solution.checkStraightLine(case2))
+        assertThat(Solution.checkStraightLine(case2)).isFalse
     }
 
     @Test
@@ -40,6 +41,6 @@ class SolutionTest {
             intArrayOf(5,0),
         )
 
-        assert(!Solution.checkStraightLine(edgeCase))
+        assertThat(Solution.checkStraightLine(edgeCase)).isFalse
     }
 }

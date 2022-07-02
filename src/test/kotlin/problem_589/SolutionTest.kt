@@ -1,5 +1,6 @@
 package problem_589
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class SolutionTest {
@@ -9,7 +10,7 @@ class SolutionTest {
         val root = Node(1).withChildren(listOf(node1, Node(2), Node(4)))
 
         val case1 = Solution.preorder(root)
-        assert(case1 == listOf(1, 3, 5, 6, 2, 4))
+        assertThat(case1).isEqualTo(listOf(1, 3, 5, 6, 2, 4))
     }
 
     @Test
@@ -23,6 +24,16 @@ class SolutionTest {
         val root = Node(1).withChildren(listOf(Node(2), node3, node4, node5))
 
         val case2 = Solution.preorder(root)
-        assert(case2 == listOf(1,2,3,6,7,11,14,4,8,12,5,9,13,10))
+        assertThat(case2).isEqualTo(listOf(1,2,3,6,7,11,14,4,8,12,5,9,13,10))
+    }
+
+    @Test
+    fun `One node tree`() {
+        val root = Node(1)
+        val node = Node(1)
+        root.`val` = 2
+        root.children = listOf(node)
+        val case3 = Solution.preorder(root)
+        assertThat(case3).isEqualTo(listOf(2, 1))
     }
 }

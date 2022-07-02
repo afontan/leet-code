@@ -9,22 +9,26 @@ group = "io.github.afontan"
 version = "1.0-SNAPSHOT"
 
 repositories {
+    gradlePluginPortal()
     mavenCentral()
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("org.assertj:assertj-core:3.11.1")
 }
 
-jacoco {
-    toolVersion = "0.8.7"
-}
+jacoco { toolVersion = "0.8.7" }
 
-tasks.jacocoTestReport {
+tasks.named<JacocoReport>("jacocoTestReport") {
+    executionData.from(fileTree(project.buildDir.absolutePath).include("jacoco/*.exec"))
+    classDirectories.setFrom(files(project.sourceSets.main.get().output))
+    sourceDirectories.setFrom(files(project.sourceSets.main.get().allSource.srcDirs))
+
     reports {
-        xml.isEnabled = true
-        csv.isEnabled = true
-        html.isEnabled = true
+        xml.required.set(true)
+        csv.required.set(true)
+        html.required.set(true)
     }
 }
 

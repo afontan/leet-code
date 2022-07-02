@@ -1,5 +1,6 @@
 package problem_1779
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class SolutionTest {
@@ -13,7 +14,7 @@ class SolutionTest {
             intArrayOf(4,4)
         )
 
-        assert(Solution.nearestValidPoint(3, 4, case1) == 2)
+        assertThat(Solution.nearestValidPoint(3, 4, case1)).isEqualTo(2)
     }
 
     @Test
@@ -22,7 +23,7 @@ class SolutionTest {
             intArrayOf(3,4)
         )
 
-        assert(Solution.nearestValidPoint(3, 4, case2) == 0)
+        assertThat(Solution.nearestValidPoint(3, 4, case2)).isEqualTo(0)
     }
 
     @Test
@@ -31,6 +32,6 @@ class SolutionTest {
             intArrayOf(2,3)
         )
 
-        assert(Solution.nearestValidPoint(3, 4, case3) == -1)
+        assertThat(Solution.nearestValidPoint(3, 4, case3)).isEqualTo(-1)
     }
 }
