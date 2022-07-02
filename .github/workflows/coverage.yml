@@ -30,4 +30,3 @@ jobs:
           ./gradlew build
           ./gradlew test
           bash <(curl -s https://codecov.io/bash)
-      

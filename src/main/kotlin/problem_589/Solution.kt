@@ -6,17 +6,24 @@ package problem_589
 */
 
 class Node(var `val`: Int) {
-    var children: List<Node?> = listOf()
+  var children: List<Node?> = mutableListOf()
+
+  fun withChildren(children: List<Node?>): Node {
+    this.children = children
+    return this
+  }
 }
 
 class Solution {
+  companion object {
     fun preorder(root: Node?): List<Int> {
-        if (root == null) return listOf()
-        val result = mutableListOf<Int>()
-        result.add(root.`val`)
-        for (child in root.children) {
-            result.addAll(preorder(child))
-        }
-        return result
+      if (root == null) return listOf()
+      val result = mutableListOf<Int>()
+      result.add(root.`val`)
+      for (child in root.children) {
+        result.addAll(preorder(child))
+      }
+      return result
     }
+  }
 }
