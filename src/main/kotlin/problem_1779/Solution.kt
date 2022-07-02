@@ -8,17 +8,19 @@ import kotlin.math.abs
 */
 
 class Solution {
+  companion object {
     fun nearestValidPoint(x: Int, y: Int, points: Array<IntArray>): Int {
-        var minDistance = Int.MAX_VALUE
-        var ans = -1
-        points.forEachIndexed { index, pair ->
-            if (pair[0] == x || pair[1] == y) {
-                if (abs(x - pair[0]) + abs(y - pair[1]) < minDistance) {
-                    minDistance = abs(x - pair[0]) + abs(y - pair[1])
-                    ans = index
-                }
-            }
+      var minDistance = Int.MAX_VALUE
+      var ans = -1
+      points.forEachIndexed { index, pair ->
+        if (pair[0] == x || pair[1] == y) {
+          if (abs(x - pair[0]) + abs(y - pair[1]) < minDistance) {
+            minDistance = abs(x - pair[0]) + abs(y - pair[1])
+            ans = index
+          }
         }
-        return ans
+      }
+      return ans
     }
+  }
 }

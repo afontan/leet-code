@@ -6,19 +6,21 @@ package problem_1491
 */
 
 class Solution {
+  companion object {
     fun average(salary: IntArray): Double {
-        var maxValue = Int.MIN_VALUE
-        var minValue = Int.MAX_VALUE
-        var totalSum = 0.0
-        salary.forEach { number ->
-            if (number > maxValue) {
-               maxValue = number
-            }
-            if (number < minValue) {
-                minValue = number
-            }
-            totalSum += number
+      var maxValue = Int.MIN_VALUE
+      var minValue = Int.MAX_VALUE
+      var totalSum = 0.0
+      salary.forEach { number ->
+        if (number > maxValue) {
+          maxValue = number
         }
-        return (totalSum - maxValue - minValue) / (salary.size - 2)
+        if (number < minValue) {
+          minValue = number
+        }
+        totalSum += number
+      }
+      return (totalSum - maxValue - minValue) / (salary.size - 2)
     }
+  }
 }

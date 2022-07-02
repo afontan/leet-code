@@ -6,12 +6,14 @@ package problem_1822
 */
 
 class Solution {
+  companion object {
     fun arraySign(nums: IntArray): Int {
-        var sign = 1
-        nums.forEach {
-            if (it == 0) return 0
-            if (it < 0) sign *= -1
-        }
-        return sign
+      var sign = 1
+      nums.forEach {
+        if (it == 0) return 0
+        if (it < 0) sign *= -1
+      }
+      return sign
     }
+  }
 }

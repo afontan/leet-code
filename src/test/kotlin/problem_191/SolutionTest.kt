@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test
 
 class SolutionTest {
     @Test
-    fun test() {
+    fun `Description test cases`() {
         val case1 = Solution.hammingWeight(521)
         assert(case1 == 3)
 

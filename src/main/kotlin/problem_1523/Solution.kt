@@ -6,12 +6,10 @@ package problem_1523
 */
 
 class Solution {
+  companion object {
     fun countOdds(low: Int, high: Int): Int {
-        if (high - low + 1 % 2 == 0)
-            return high - low + 1
-        else if (low % 2 == 0)
-            return (high - low + 1) / 2
-        else
-            return ((high - low) / 2) + 1
+      return if (high - low + 1 % 2 == 0) high - low + 1
+      else if (low % 2 == 0) (high - low + 1) / 2 else ((high - low) / 2) + 1
     }
+  }
 }
