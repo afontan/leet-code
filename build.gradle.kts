@@ -17,7 +17,7 @@ dependencies {
 }
 
 jacoco {
-    toolVersion = "0.8.5"
+    toolVersion = "0.8.7"
 }
 
 tasks.jacocoTestReport {
@@ -31,12 +31,7 @@ tasks.jacocoTestReport {
 tasks.test {
     finalizedBy(tasks.jacocoTestReport)
     useJUnitPlatform {
-        includeEngines("junit-jupiter", "spek2")
-    }
-
-    testLogging {
-        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
-        events("passed", "failed", "skipped")
+        includeEngines("junit-jupiter")
     }
 }
 
