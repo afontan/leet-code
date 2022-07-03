@@ -1,5 +1,10 @@
 package problem_1672
 
+/*
+    1672. Richest Customer Wealth
+    https://leetcode.com/problems/richest-customer-wealth/
+*/
+
 class Solution {
     companion object {
         fun maximumWealth(accounts: Array<IntArray>): Int {

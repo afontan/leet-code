@@ -1,5 +1,10 @@
 package problem_1588
 
+/*
+    1588. Sum of All Odd Length Subarrays
+    https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+*/
+
 class Solution {
     companion object {
         fun sumOddLengthSubarrays(arr: IntArray): Int {

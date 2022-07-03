@@ -1,5 +1,10 @@
 package problem_283
 
+/*
+  283. Move Zeroes
+  https://leetcode.com/problems/move-zeroes/
+*/
+
 class Solution {
   companion object {
     fun moveZeroes(nums: IntArray): Unit {
