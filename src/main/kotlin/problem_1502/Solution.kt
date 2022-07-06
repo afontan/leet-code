@@ -5,18 +5,16 @@ package problem_1502
     https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/
 */
 
-class Solution {
-  companion object {
-    fun canMakeArithmeticProgression(arr: IntArray): Boolean {
-      if (arr.size == 1) return true
-      arr.sort()
-      val distance = arr[1] - arr[0]
-      arr.forEachIndexed { index, i ->
-        if (index != 0 && index != arr.lastIndex) {
-          if (arr[index + 1] - i != distance) return false
-        }
+object Solution {
+  fun canMakeArithmeticProgression(arr: IntArray): Boolean {
+    if (arr.size == 1) return true
+    arr.sort()
+    val distance = arr[1] - arr[0]
+    arr.forEachIndexed { index, i ->
+      if (index != 0 && index != arr.lastIndex) {
+        if (arr[index + 1] - i != distance) return false
       }
-      return true
     }
+    return true
   }
 }

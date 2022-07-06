@@ -5,22 +5,20 @@ package problem_1491
     https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
 */
 
-class Solution {
-  companion object {
-    fun average(salary: IntArray): Double {
-      var maxValue = Int.MIN_VALUE
-      var minValue = Int.MAX_VALUE
-      var totalSum = 0.0
-      salary.forEach { number ->
-        if (number > maxValue) {
-          maxValue = number
-        }
-        if (number < minValue) {
-          minValue = number
-        }
-        totalSum += number
+object Solution {
+  fun average(salary: IntArray): Double {
+    var maxValue = Int.MIN_VALUE
+    var minValue = Int.MAX_VALUE
+    var totalSum = 0.0
+    salary.forEach { number ->
+      if (number > maxValue) {
+        maxValue = number
       }
-      return (totalSum - maxValue - minValue) / (salary.size - 2)
+      if (number < minValue) {
+        minValue = number
+      }
+      totalSum += number
     }
+    return (totalSum - maxValue - minValue) / (salary.size - 2)
   }
 }

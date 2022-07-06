@@ -14,16 +14,14 @@ class Node(var `val`: Int) {
   }
 }
 
-class Solution {
-  companion object {
-    fun preorder(root: Node?): List<Int> {
-      if (root == null) return listOf()
-      val result = mutableListOf<Int>()
-      result.add(root.`val`)
-      for (child in root.children) {
-        result.addAll(preorder(child))
-      }
-      return result
+object Solution {
+  fun preorder(root: Node?): List<Int> {
+    if (root == null) return listOf()
+    val result = mutableListOf<Int>()
+    result.add(root.`val`)
+    for (child in root.children) {
+      result.addAll(preorder(child))
     }
+    return result
   }
 }
