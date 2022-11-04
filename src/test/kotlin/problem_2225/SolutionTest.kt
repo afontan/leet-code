@@ -36,6 +36,8 @@ class SolutionTest {
             intArrayOf(6, 4)
         )
 
+        "asd".indexOf("asd")
+
         assertThat(Solution.findWinners(case2)).isEqualTo(
             listOf(
                 listOf(1, 2, 5, 6),

@@ -21,3 +21,20 @@ object Solution {
         )
     }
 }
+
+class Solution2 {
+    fun plusOne(digits: IntArray): IntArray {
+        for (i in digits.indices.reversed()) {
+            if (digits[i] != 9) {
+                digits[i]++
+                break
+            } else {
+                digits[i] = 0
+            }
+        }
+        if (digits[0] == 0) {
+            return intArrayOf(1).plus(digits)
+        }
+        return digits
+    }
+}
