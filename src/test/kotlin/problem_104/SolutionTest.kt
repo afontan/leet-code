@@ -20,7 +20,7 @@ class SolutionTest {
 
     @Test
     fun `Description test case 2`() {
-        println("Hola mundo")
+        println("Hola mundo2")
         val tree = TreeNode(1).apply {
             right = TreeNode(2)
         }
