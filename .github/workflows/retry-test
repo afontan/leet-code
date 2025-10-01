@@ -1,0 +1,21 @@
+name: Retry POC
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fail-fast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always fail
+        run: |
+          echo "This job will fail on purpose"
+          exit 1
+
+  long-sleeper:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleep for a long time
+        run: |
+          echo "Sleeping for 5 minutes..."
+          sleep 300
